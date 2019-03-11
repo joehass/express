@@ -15,6 +15,15 @@ module.exports={
     },//引用不用再加入后缀名
     devtool: "eval-source-map",//在一个单独的文件中产生一个完整且功能完全的文件，便于调试
     devServer: {
+        //使用代理
+        //凡是/api开头的http请求，都会被代理到localhost:3000
+        //koa代码在./mock目录中，启动命令为npm run mock
+        proxy:{
+            '_/api_':{
+                target:'http://localhost:3000',
+                secure:false
+            }
+        },
         //historyApiFallback:true,//不跳转，即所有的跳转都将指向index.html
         inline:true,//实时刷新
         hot:true,//使用热加载插件
@@ -31,7 +40,20 @@ module.exports={
                     ]
                 }
             }
-        }]
+        },
+            {
+                test: /(\.less)/,
+                use:{
+                    loader: "style!css!postcss!less"
+                }
+            },
+            {
+                test: /(\.css)/,
+                use:{
+                    loader: "style!css!postcss"
+                }
+            }
+        ]
     },
     plugins: [
         //html模板插件

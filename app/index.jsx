@@ -1,62 +1,8 @@
 import React from 'react'
 import {render} from 'react-dom'
-import {RouteMap} from './router/routeMap'
-import hashHistory from 'react-router'
-//首字母要大写
-//定义组件
-//class Hello extends React.Component{
-//class Hello extends React.Component{
-//class Hello extends React.Component{
-//class Hello extends React.Component {
-//    constructor(props, context) {
-//        super(props, context);
-//        this.state = {
-//            now: Date.now()
-//        }
-//    }
-//    render() {
-//        //return 里面写jsx语法
-//        // let m = <p>hello world 100</p>
-//        // return m
-//        //返回多个节点
-//        let m = 100;
-//        let s = {fontSize:'50px'};
-//        let arr = ['aa','bb','cc'];
-//        return (
-//            <div>
-//                <p className="title" onClick={this.clickHandler.bind(this)}>hello world {this.state.now}</p>
-//                {m ? '100a':'not 100'}
-//                <p style={s}>789</p>
-//                <ul>
-//                    {arr.map(function (item,index) {
-//                        return <li key={index}>{item}</li>
-//                    })}
-//                </ul>
-//            </div>
-//        )
-//    }
-//    clickHandler(e){
-//        e.preventDefault();//阻止默认行为
-//        console.log(Date.now())
-//        this.setState({
-//            now:Date.now()
-//        })
-//    }
-//    //渲染完成
-//    componentDidMount() {
-//    componentDidMount() {
-//    }
-//    }
-//    //触发更新完成，一般清空并更新数据
-//    componentDidUpdate(prevProps, prevState, snapshot) {
-//        console.log("123")
-//    }
-//    }
-//    //清空 组件销毁之前调用
-//    componentWillUnmount() {
-//    }
-//}
+import {Login} from "./component/login";
+
 render(
-    <RouteMap history ={hashHistory}/>
+    <Login/>,
     document.getElementById('root')
-)
+);

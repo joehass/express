@@ -1,0 +1,2 @@
+export const USERINFO_LOGUN = 'USERINFO_LOGIN';
+export const UPDATE_CITYNAME = 'UPDATE_CITYNAME';
